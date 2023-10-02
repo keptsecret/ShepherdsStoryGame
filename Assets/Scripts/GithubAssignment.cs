@@ -8,6 +8,7 @@ public class GithubAssignment : MonoBehaviour
     void Start()
     {
         print("Hi world");
+        print("Hello world");
     }
 
     // Update is called once per frame
