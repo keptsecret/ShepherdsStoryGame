@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GoalTriggerScript : MonoBehaviour
 {
-    public GameObject player;
-    private PlayerController playerController;
+    public GameObject manager;
+    private LevelStateManager levelStateManager;
 
     private void Start()
     {
-        playerController = player.GetComponent<PlayerController>();
+        levelStateManager = manager.GetComponent<LevelStateManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,9 +19,9 @@ public class GoalTriggerScript : MonoBehaviour
             other.gameObject.SetActive(false);
         }
         
-        if (playerController != null)
+        if (levelStateManager != null)
         {
-            playerController.IncrementScore();
+            levelStateManager.IncrementScore();
         }
     }
 }
