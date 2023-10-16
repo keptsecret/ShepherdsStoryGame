@@ -1304,7 +1304,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 32
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1381860061
 MonoBehaviour:
@@ -1370,6 +1370,35 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1015836233}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1381860066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381860059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39308a59d4f345409f859f706f6ac74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnMaxSpeed: 1
+--- !u!114 &1381860067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381860059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9910ab50a3574418ba285ee12a9b6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Steve  Hua
+  InputMapToCircular: 1
+  forwardInputFilter: 5
+  turnInputFilter: 5
 --- !u!1001 &1481187735
 PrefabInstance:
   m_ObjectHideFlags: 0
