@@ -8,20 +8,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector2 movement;
 
-    private int score;
-    public int SheepCount;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-    }
-
-    private void Update()
-    {
-        if (score == SheepCount)
-        {
-            Debug.Log("Win!");
-        }
     }
 
     private void FixedUpdate()
@@ -35,11 +24,6 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
-    }
-
-    public void IncrementScore()
-    {
-        score++;
     }
 
     private Vector3 WorldToCameraSpace(Vector3 v)

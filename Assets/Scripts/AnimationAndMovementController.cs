@@ -9,7 +9,9 @@ public class AnimationAndMovementController : MonoBehaviour
     private Animator anim;
     private Rigidbody rbody;
     private CharacterInputController cinput;
+    
     public float turnMaxSpeed = 1f;
+
     // Start is called before the first frame update
     void Awake()
     {
