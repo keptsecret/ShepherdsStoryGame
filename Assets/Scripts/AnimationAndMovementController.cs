@@ -9,6 +9,9 @@ public class AnimationAndMovementController : MonoBehaviour
     private Animator anim;
     private Rigidbody rbody;
     private CharacterInputController cinput;
+    
+    public float turnMaxSpeed = 1f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -44,6 +47,8 @@ public class AnimationAndMovementController : MonoBehaviour
             inputForward = cinput.Forward;
             inputTurn = cinput.Turn;
         }
+
+        rbody.MoveRotation(rbody.rotation * Quaternion.AngleAxis(inputTurn * Time.deltaTime * turnMaxSpeed, Vector3.up));
 
         anim.SetFloat("velx", inputTurn); 
         anim.SetFloat("vely", inputForward);

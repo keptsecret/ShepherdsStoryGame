@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = new Vector3(movement.x, 0f, movement.y);
         Vector3 dirCamera = WorldToCameraSpace(dir);
         rb.MovePosition(rb.transform.position + dirCamera.normalized * 0.25f);
+        rb.transform.rotation = (Camera.main.transform.rotation);
     }
 
     void OnMove(InputValue value)
