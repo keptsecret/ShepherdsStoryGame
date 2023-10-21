@@ -836,8 +836,6 @@ GameObject:
   - component: {fileID: 8007993375627976184}
   - component: {fileID: 8007993375627976186}
   - component: {fileID: 8007993375627976185}
-  - component: {fileID: 8007993375627976133}
-  - component: {fileID: 8007993375627976132}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -911,9 +909,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.26601148
-  m_Height: 1.71364
+  m_Height: 1.83
   m_Direction: 1
-  m_Center: {x: -0.0035188198, y: 0.9319743, z: -0.008069515}
+  m_Center: {x: -0.0035188198, y: 0.89, z: -0.008069515}
 --- !u!114 &8007993375627976186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,35 +955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60848b7c10eef9e4a805fe94c75cb388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8007993375627976133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3558172440512827139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39308a59d4f345409f859f706f6ac74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnMaxSpeed: 1
---- !u!114 &8007993375627976132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3558172440512827139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9910ab50a3574418ba285ee12a9b6bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Steve  Hua
-  InputMapToCircular: 1
-  forwardInputFilter: 5
-  turnInputFilter: 5
 --- !u!1 &3662653263643299622
 GameObject:
   m_ObjectHideFlags: 0
