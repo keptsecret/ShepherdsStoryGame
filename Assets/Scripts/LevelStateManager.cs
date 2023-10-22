@@ -26,5 +26,6 @@ public class LevelStateManager : MonoBehaviour
     public void IncrementScore()
     {
         score++;
+        Debug.Log(score);
     }
 }

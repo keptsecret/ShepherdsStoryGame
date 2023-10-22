@@ -14,14 +14,13 @@ public class GoalTriggerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Sheep")
+        if (other.gameObject.tag == "Sheep" && !other.isTrigger)
         {
             other.gameObject.SetActive(false);
-        }
-        
-        if (levelStateManager != null)
-        {
-            levelStateManager.IncrementScore();
+            if (levelStateManager != null)
+            {
+                levelStateManager.IncrementScore();
+            }
         }
     }
 }

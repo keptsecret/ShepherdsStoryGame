@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        anim.SetFloat("velx", movement.x);
+        anim.SetFloat("vely", movement.y);
+    }
+
     private void FixedUpdate()
     {
         Vector3 dir = new Vector3(movement.x, 0f, movement.y);
@@ -32,9 +38,6 @@ public class PlayerController : MonoBehaviour
         }
         Vector3 eulerRotation = new Vector3(0, eulerY, 0);
         rb.MoveRotation(Quaternion.Euler(eulerRotation));
-
-        anim.SetFloat("velx", movement.x);
-        anim.SetFloat("vely", movement.y);
     }
 
     void OnMove(InputValue value)
