@@ -33,7 +33,7 @@ public class SheepController : MonoBehaviour
         }
         Vector3 eulerRotation = new Vector3(0, eulerY, 0);
         rb.MoveRotation(Quaternion.SlerpUnclamped(rb.transform.rotation, Quaternion.Euler(eulerRotation), Time.fixedDeltaTime * 2f));
-        
+
         float forward = Vector3.Dot(movementDir, rb.transform.forward);
         anim.SetFloat("vely", Mathf.Clamp01(forward * speed * 2f));
     }
