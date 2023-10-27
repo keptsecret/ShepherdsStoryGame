@@ -1147,6 +1147,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6539227814003042806, guid: 4d64b2b7f5c2d894ba346af9e64e516c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wolf
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8569194128998586160, guid: 4d64b2b7f5c2d894ba346af9e64e516c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4d64b2b7f5c2d894ba346af9e64e516c, type: 3}
@@ -3214,7 +3219,7 @@ PrefabInstance:
     - target: {fileID: 8433019056720266976, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.64056367
+      value: 0.6405637
       objectReference: {fileID: 0}
     - target: {fileID: 8433019056720266976, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
@@ -3224,12 +3229,12 @@ PrefabInstance:
     - target: {fileID: 8433019056720266976, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.74805707
+      value: -0.748057
       objectReference: {fileID: 0}
     - target: {fileID: 8433019056720266976, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13175641
+      value: 0.13175642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6, type: 3}

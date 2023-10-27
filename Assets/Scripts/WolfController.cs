@@ -37,17 +37,11 @@ public class WolfController : MonoBehaviour
 
         float forward = Vector3.Dot(movementDir, rb.transform.forward);
         anim.SetFloat("vely", Mathf.Clamp01(forward * speed * 2f));
+
+        rb.MovePosition(transform.position + movementDir * speed * Time.fixedDeltaTime);
+
     }
 
-    void OnAnimatorMove()
-    {
-
-        Vector3 newRootPosition = anim.rootPosition;
-        newRootPosition = Vector3.LerpUnclamped(this.transform.position, newRootPosition, 1f);
-
-        rb.MovePosition(newRootPosition);
-        Debug.Log(newRootPosition.ToString());
-    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -56,7 +50,7 @@ public class WolfController : MonoBehaviour
             Vector3 dir = transform.position - other.transform.position;
             movementDir = new Vector3(dir.x, 0, dir.z);
             movementDir = movementDir.normalized;
-            speed = Mathf.Max((5f - dir.magnitude) / 5f, 0.1f);
+            speed = Mathf.Max((20f - dir.magnitude) / 5f, 0.1f);
         }
 
     }
