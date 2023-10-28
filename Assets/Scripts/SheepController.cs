@@ -11,11 +11,16 @@ public class SheepController : MonoBehaviour
 
     private Rigidbody rb;
     private Animator anim;
+    private AudioSource audioSource;
+
+    public AudioClip BaaSound;
+    public AudioClip WalkSound;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -47,6 +52,13 @@ public class SheepController : MonoBehaviour
         rb.MovePosition(newRootPosition);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player") {
+            audioSource.PlayOneShot(BaaSound);
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -70,6 +82,11 @@ public class SheepController : MonoBehaviour
             movementDir = new Vector3();
             speed = 0;
         }
+    }
+
+    private void SheepWalkSound()
+    {
+        audioSource.PlayOneShot(WalkSound);
     }
 }
 
