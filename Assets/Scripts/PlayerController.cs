@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
     private Vector2 movement;
+    private AudioSource audioSource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -60,5 +62,10 @@ public class PlayerController : MonoBehaviour
         Vector3 right = v.x * cameraRight;
 
         return forward + right;
+    }
+
+    private void PlayerFootstepSound()
+    {
+        audioSource.Play();
     }
 }
