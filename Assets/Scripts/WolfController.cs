@@ -16,6 +16,10 @@ public class WolfController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+
+        // freeze rotation along x and z axis
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        rb.centerOfMass = new Vector3(0, -0.5f, 0);
     }
 
     private void FixedUpdate()
