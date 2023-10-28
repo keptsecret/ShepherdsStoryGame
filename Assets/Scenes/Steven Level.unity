@@ -5479,36 +5479,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 56551759}
-    - target: {fileID: 8433019056391840571, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
-        type: 3}
-      propertyPath: m_XAxis.m_MaxSpeed
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433019056391840571, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
-        type: 3}
-      propertyPath: m_XAxis.m_SpeedMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433019056391840571, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
-        type: 3}
-      propertyPath: m_YAxis.m_SpeedMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433019056391840571, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
-        type: 3}
-      propertyPath: m_Orbits.Array.data[0].m_Radius
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433019056391840571, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
-        type: 3}
-      propertyPath: m_Orbits.Array.data[1].m_Radius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433019056391840571, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
-        type: 3}
-      propertyPath: m_Orbits.Array.data[2].m_Radius
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 8433019056616874946, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -5547,12 +5517,12 @@ PrefabInstance:
     - target: {fileID: 8433019056647274350, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.001497498
+      value: 0.0014975355
       objectReference: {fileID: 0}
     - target: {fileID: 8433019056647274350, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0003535114
+      value: 0.00035352024
       objectReference: {fileID: 0}
     - target: {fileID: 8433019056647274350, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
