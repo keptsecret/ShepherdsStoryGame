@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        startingPosition = rb.transform.position;
+        startingPosition = new Vector3(-21.62f, 0.1f, -31.02f);
         audioSource = GetComponent<AudioSource>();
     }
 
