@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sheep
+  - Flower
+  - Flower1
+  - Flower2
+  - Flower3
+  - Water
   layers:
   - Default
   - TransparentFX

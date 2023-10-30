@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
     private Vector2 movement;
+    private Vector3 startingPosition;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        startingPosition = rb.transform.position;
     }
 
     private void Update()
@@ -43,6 +45,14 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Water")
+        {
+            rb.transform.position = startingPosition;
+        }
     }
 
     private Vector3 WorldToCameraSpace(Vector3 v)
