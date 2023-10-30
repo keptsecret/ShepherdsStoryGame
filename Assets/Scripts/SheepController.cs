@@ -11,40 +11,83 @@ public class SheepController : MonoBehaviour
 
     private Rigidbody rb;
     private Animator anim;
+    private AudioSource audioSource;
+
+    //private bool isAlive = true;
+
+    // for calculating velocity
+    public float smoothingTimeFactor = 0.5f;
+    private Vector3 smoothingParamVel;
+    private Vector3 prevPos;
+
+    public AudioClip BaaSound;
+    public AudioClip WalkSound;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
+        prevPos = this.transform.position;
+        isAlive = true;
+
+    }
+
+    private void Update()
+    {
+        if (!Mathf.Approximately(Time.deltaTime, 0f))
+        {
+            rawVelocity = (this.transform.position - prevPos) / Time.deltaTime;
+            velocity = Vector3.SmoothDamp(velocity, rawVelocity, ref smoothingParamVel, smoothingTimeFactor);
+        }
+        else
+        {
+            rawVelocity = new Vector3(0, 0, 0);
+            velocity = new Vector3(0, 0, 0);
+        }
+        prevPos = this.transform.position;
     }
 
     private void FixedUpdate()
     {
-        float eulerY = rb.transform.eulerAngles.y;
-        if (movementDir.magnitude > 0.01f)
+        if (isAlive)
         {
-            Quaternion lookRotation = Quaternion.LookRotation(movementDir.normalized, rb.transform.up);
-            float diffRotation = lookRotation.eulerAngles.y - rb.transform.eulerAngles.y;
-
-            if (diffRotation > 0f || diffRotation < 0f)
+             float eulerY = rb.transform.eulerAngles.y;
+            if (movementDir.magnitude > 0.01f)
             {
-                eulerY = lookRotation.eulerAngles.y;
+                Quaternion lookRotation = Quaternion.LookRotation(movementDir.normalized, rb.transform.up);
+                float diffRotation = lookRotation.eulerAngles.y - rb.transform.eulerAngles.y;
+
+                if (diffRotation > 0f || diffRotation < 0f)
+                {
+                    eulerY = lookRotation.eulerAngles.y;
+                }
             }
+            Vector3 eulerRotation = new Vector3(0, eulerY, 0);
+            rb.MoveRotation(Quaternion.SlerpUnclamped(rb.transform.rotation, Quaternion.Euler(eulerRotation), Time.fixedDeltaTime * 2f));
+
+            float forward = Vector3.Dot(movementDir, rb.transform.forward);
+            anim.SetFloat("vely", Mathf.Clamp01(forward * speed * 2f));
         }
-        Vector3 eulerRotation = new Vector3(0, eulerY, 0);
-        rb.MoveRotation(Quaternion.SlerpUnclamped(rb.transform.rotation, Quaternion.Euler(eulerRotation), Time.fixedDeltaTime * 2f));
-        
-        float forward = Vector3.Dot(movementDir, rb.transform.forward);
-        anim.SetFloat("vely", Mathf.Clamp01(forward * speed * 2f));
     }
 
     void OnAnimatorMove()
     {
+        if (isAlive)
+        {
+            Vector3 newRootPosition = anim.rootPosition;
+            newRootPosition = Vector3.LerpUnclamped(this.transform.position, newRootPosition, 1f);
 
-        Vector3 newRootPosition = anim.rootPosition;
-        newRootPosition = Vector3.LerpUnclamped(this.transform.position, newRootPosition, 1f);
+            rb.MovePosition(newRootPosition);
+        }
+    }
 
-        rb.MovePosition(newRootPosition);
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player") {
+            audioSource.PlayOneShot(BaaSound);
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -70,6 +113,36 @@ public class SheepController : MonoBehaviour
             movementDir = new Vector3();
             speed = 0;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (isAlive && collision.gameObject.CompareTag("Wolf"))
+        {
+            anim.SetTrigger("DieTrigger");
+            isAlive = false;
+        }
+    }
+
+    public Vector3 rawVelocity
+    {
+        get;
+        private set;
+    }
+    public Vector3 velocity
+    {
+        get;
+        private set;
+    }
+    public bool isAlive
+    {
+        get;
+        private set;
+    }
+
+    private void SheepWalkSound()
+    {
+        audioSource.PlayOneShot(WalkSound);
     }
 }
 

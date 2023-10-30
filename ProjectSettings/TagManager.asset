@@ -10,6 +10,7 @@ TagManager:
   - Flower2
   - Flower3
   - Water
+  - Wolf
   layers:
   - Default
   - TransparentFX
