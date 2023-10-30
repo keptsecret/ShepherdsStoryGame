@@ -9,12 +9,14 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Vector2 movement;
     private Vector3 startingPosition;
+    private AudioSource audioSource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         startingPosition = rb.transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -70,5 +72,10 @@ public class PlayerController : MonoBehaviour
         Vector3 right = v.x * cameraRight;
 
         return forward + right;
+    }
+
+    private void PlayerFootstepSound()
+    {
+        audioSource.Play();
     }
 }
