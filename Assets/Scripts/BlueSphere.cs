@@ -5,15 +5,18 @@ using UnityEngine;
 public class BlueSphere : MonoBehaviour
 {
     public Transform sphere;  
-    public float push = 10f; 
-    public float activationDistance = 5f; 
+    public float push = 40f;
+    private Rigidbody rb;
+    public float activationDistance = 100f; 
     public bool playerTouch;
     private FlowerManager flowerManager;
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         playerTouch = false;
         flowerManager = GameObject.FindObjectOfType<FlowerManager>();
+        rb.isKinematic = false;
     }
 
     void OnTriggerStay(Collider other)
@@ -21,16 +24,22 @@ public class BlueSphere : MonoBehaviour
         if (other.gameObject.tag == "Flower1")
         {
             flowerManager.inFlowerCircle1 = true;
+            rb.isKinematic = true;
+
         }
 
         if (other.gameObject.tag == "Flower2")
         {
             flowerManager.inFlowerCircle2 = true;
+            rb.isKinematic = true;
+
         }
 
         if (other.gameObject.tag == "Flower3")
         {
             flowerManager.inFlowerCircle3 = true;
+            rb.isKinematic = true;
+
         }
 
         if (other.gameObject.tag == "Player")
@@ -39,23 +48,23 @@ public class BlueSphere : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag != "Flower1")
-        {
-            flowerManager.inFlowerCircle1 = false;
-        }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag != "Flower1")
+    //    {
+    //        flowerManager.inFlowerCircle1 = false;
+    //    }
 
-        if (other.gameObject.tag != "Flower2")
-        {
-            flowerManager.inFlowerCircle1 = false;
-        }
+    //    if (other.gameObject.tag != "Flower2")
+    //    {
+    //        flowerManager.inFlowerCircle2 = false;
+    //    }
 
-        if (other.gameObject.tag != "Flower3")
-        {
-            flowerManager.inFlowerCircle1 = false;
-        }
-    }
+    //    if (other.gameObject.tag != "Flower3")
+    //    {
+    //        flowerManager.inFlowerCircle3 = false;
+    //    }
+    //}
 
 
 
@@ -72,7 +81,11 @@ public class BlueSphere : MonoBehaviour
 
     void PushSphere()
     {
+        //if (other.gameObject.tag != "Flower1" || (other.gameObject.tag != "Flower2") || other.gameObject.tag != "Flower3")
+        //{
         Vector3 pushDirection = (sphere.position - transform.position).normalized;
         sphere.GetComponent<Rigidbody>().AddForce(pushDirection * push, ForceMode.Impulse);
+        //}
+            
     }
 }
