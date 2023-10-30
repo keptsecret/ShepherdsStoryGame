@@ -7,7 +7,7 @@ public class GameStarter : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("DemoScene");
+        SceneManager.LoadScene("Steven Level");
         Time.timeScale = 1f;
     }
 }
