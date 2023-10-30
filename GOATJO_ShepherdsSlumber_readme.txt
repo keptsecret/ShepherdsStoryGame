@@ -55,4 +55,7 @@ StumpLevel1.cs - Steven
 TimerUI.cs - Seo Hyun
 WolfAI.cs - Seo Hyun
 WolfController.cs - Seo Hyun
+FlowerManager.cs - Courtney
+Elevator.cs - Courtney
+BlueSphere.cs - Courtney
 
