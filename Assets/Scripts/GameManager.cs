@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,8 +26,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        currentTime = levelTime;
     }
 
     private void Update()
@@ -66,5 +65,20 @@ public class GameManager : MonoBehaviour
     {
         get;
         private set;
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        currentTime = levelTime;
     }
 }
