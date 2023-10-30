@@ -83,6 +83,7 @@ public class WolfAI : MonoBehaviour
             if (currentSheep.GetComponent<SheepController>().isAlive == false)
             {
                 availableSheep.Remove(currentSheep);
+                GameManager.instance.sheepAliveCount--;
             }
 
             if (delayTimer <= 0)
