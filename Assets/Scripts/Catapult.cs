@@ -51,8 +51,8 @@ public class Catapult : MonoBehaviour
     void sheepJump(Rigidbody sheepRigidbody)
     {
         // Apply jump force to the specific sheep
-        sheepRigidbody.AddForce(Vector3.forward * 500.0f, ForceMode.Impulse);
-        sheepRigidbody.AddForce(Vector3.up * 200, ForceMode.Impulse);
+        sheepRigidbody.AddForce(Vector3.forward * 650.0f, ForceMode.Impulse);
+        sheepRigidbody.AddForce(Vector3.up * 230, ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision collision)
