@@ -11,6 +11,7 @@ TagManager:
   - Flower3
   - Water
   - Wolf
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Pickup
+  - Key
   - 
   - 
   - 
