@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        startingPosition = new Vector3(-21.62f, 5.1f, -48.02f);
+        startingPosition = transform.position;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("vely", movement.y);
         DetectJumpPhases();
 
+        if (rb.transform.position.y < -20) 
+        {
+            rb.transform.position = startingPosition;
+        }
     }
 
     private void FixedUpdate()

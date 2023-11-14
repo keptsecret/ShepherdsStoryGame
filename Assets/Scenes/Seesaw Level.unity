@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.68974155, g: 0.69140303, b: 0.6836892, a: 1}
+  m_IndirectSpecularColor: {r: 0.714881, g: 0.71856177, b: 0.7126463, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2016,7 +2016,7 @@ PrefabInstance:
     - target: {fileID: 8433019056647274350, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15764725
+      value: 0.15764724
       objectReference: {fileID: 0}
     - target: {fileID: 8433019056647274350, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
@@ -2026,7 +2026,7 @@ PrefabInstance:
     - target: {fileID: 8433019056647274350, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.056728844
+      value: -0.05672885
       objectReference: {fileID: 0}
     - target: {fileID: 8433019056720266976, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
@@ -2184,7 +2184,7 @@ PrefabInstance:
     - target: {fileID: 2781041664093877493, guid: 37e30e7631f69fc49b4a4ed9b8f50796,
         type: 3}
       propertyPath: NextLevel
-      value: StartMenu
+      value: SeoHyun Level
       objectReference: {fileID: 0}
     - target: {fileID: 2781041664093877493, guid: 37e30e7631f69fc49b4a4ed9b8f50796,
         type: 3}
@@ -3720,6 +3720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8885829906990327067, guid: 01046b38b992545c89fdbf029531e6bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01046b38b992545c89fdbf029531e6bf, type: 3}
 --- !u!1 &1434853250 stripped
@@ -4618,7 +4623,7 @@ GameObject:
   - component: {fileID: 1792230107}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
