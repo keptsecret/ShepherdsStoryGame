@@ -12,6 +12,7 @@ TagManager:
   - Water
   - Wolf
   - Terrain
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Pickup
+  - Key
   - 
   - 
   - 

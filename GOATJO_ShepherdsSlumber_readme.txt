@@ -1,8 +1,10 @@
-i. start scene file is StartMenu
+GOATJO - Shepherd's Slumber
+
+i. Start scene file is StartMenu
 ii. How to play the game:
 To begin the game, the player uses their mouse to navigate through the UI. Once the user gets into a level, the player can use their mouse/controller to adjust the camera angle of the player. To move around, the player has the option to move using WASD or the arrow keys.
 
-Depending on the level, there are different puzzles for the player to complete. The end objective of each level though is to herd all the sheep within the pen before the timer runs out. The timer is able to be seen in the top right corner, and the number of sheep that are still alive can be seen in the top left corner. 
+Depending on the level, there are different puzzles for the player to complete. The end objective of each level though is to herd all the sheep within the pen before the timer runs out. The timer is able to be seen in the top right corner, and the number of sheep that are still alive can be seen in the top left corner.
 
 Technology Requirements:
 For the first part, with a 3D game feel, you can see that within any of the levels, with an objective to get the sheep in a pen. The player is controlled in a third-person perspective and general game design like replaying/resetting can be accessed in the menu when the user presses ESC.
@@ -13,8 +15,13 @@ For real-time control, we used controls from the things we learned in class to c
 
 For physics and spatial simulation, when we created the levels, we created the terrain and environment from scratch. We kept the clipping to a minimum and bodies that are able to move around, like the sheep who are able to move around in any direction. The other features are able to be seen as the player explores each level. 
 
+For AI and behaviors, the AI has fluid animations in chasing the sheep in terms of the wolf, adding difficulty to completing the level. The wolf prevents the user from collecting all the sheep and the animation is fluid whether it’s the sheep running away from you or getting killed by the wolf.
 
-For AI and behaviors, the AI has fluid animations in chasing the sheep in terms of the wolf, adding difficulty to completing the level. The wolf prevents the user from collecting all the sheep and the animation is fluid whether it’s the sheep running away from you or getting killed by the wolf. 
+---
+Brief level guide (because we haven't got dialog boxes in yet):
+Level 1 - The pen is fenced off! There are hidden levers placed in 3 tree stumps around the level. Get to them and they should activate. Then you can herd the sheep into the pen. Make sure to do it before evening and the wolf comes out!
+Level 2 - For extra security, the pen is surrounding by a moat. Move the blue balls into the flower rings around the map to activate the elevator platform. Then you can herd the sheep into the pen.
+---
 
 iii. Known Problem Areas
 No game over screen yet
@@ -55,4 +62,7 @@ StumpLevel1.cs - Steven
 TimerUI.cs - Seo Hyun
 WolfAI.cs - Seo Hyun
 WolfController.cs - Seo Hyun
+FlowerManager.cs - Courtney
+Elevator.cs - Courtney
+BlueSphere.cs - Courtney
 
