@@ -11,6 +11,7 @@ TagManager:
   - Flower3
   - Water
   - Wolf
+  - Terrain
   layers:
   - Default
   - TransparentFX

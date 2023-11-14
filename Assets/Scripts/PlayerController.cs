@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 startingPosition;
     private AudioSource audioSource;
 
+    // for jumping
+    private bool isJumping = false;
+    private float jumpForce = 5.0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -23,6 +27,8 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("velx", movement.x);
         anim.SetFloat("vely", movement.y);
+        DetectJumpPhases();
+
     }
 
     private void FixedUpdate()
@@ -42,6 +48,7 @@ public class PlayerController : MonoBehaviour
         }
         Vector3 eulerRotation = new Vector3(0, eulerY, 0);
         rb.MoveRotation(Quaternion.Euler(eulerRotation));
+
     }
 
     void OnMove(InputValue value)
@@ -49,11 +56,74 @@ public class PlayerController : MonoBehaviour
         movement = value.Get<Vector2>();
     }
 
+    void OnJump(InputValue value)
+    {
+        //Debug.Log("Jump");
+        if (value.Get<float>() > 0f && !isJumping)
+        {
+            Jump();
+        }
+    }
+
+    private void Jump()
+    {
+        anim.SetBool("IsJumpingUp", true);
+        anim.SetBool("IsWalking", false);
+        anim.SetBool("IsFalling", false);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        isJumping = true;
+    }
+
+    private void DetectJumpPhases()
+    {
+        if (isJumping)
+        {
+            if (rb.velocity.y > 0)
+            {
+
+                anim.SetBool("IsJumpingUp", true);
+                //anim.SetBool("IsMidAir", false);
+                anim.SetBool("IsFalling", false);
+                anim.SetBool("IsWalking", false);
+            }
+            else
+            {
+                //Debug.Log("falling");
+                anim.SetBool("IsJumpingUp", false);
+                //anim.SetBool("IsMidAir", false);
+                anim.SetBool("IsFalling", true);
+                anim.SetBool("IsWalking", false);
+
+            }
+            //else
+            //{
+            //    Debug.Log("midair");
+            //    anim.SetBool("IsJumpingUp", false);
+            //    anim.SetBool("IsMidAir", true);
+            //    anim.SetBool("IsFalling", false);
+            //}
+        } else
+        {
+            //Debug.Log("walk");
+            anim.SetBool("IsJumpingUp", false);
+            //anim.SetBool("IsMidAir", false);
+            anim.SetBool("IsFalling", false);
+            anim.SetBool("IsWalking", true);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Water")
         {
             rb.transform.position = startingPosition;
+        }
+        if (other.gameObject.tag == "Terrain")
+        {
+            Debug.Log("collided with terrain");
+            //Debug.Log("Walk");
+            isJumping = false;
+            anim.SetBool("IsWalking", true);
         }
     }
 
