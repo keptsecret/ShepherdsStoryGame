@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        startingPosition = new Vector3(-21.62f, 0.1f, -31.02f);
+        startingPosition = new Vector3(-21.62f, 5.1f, -48.02f);
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -52,6 +52,14 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Water")
+        {
+            rb.transform.position = startingPosition;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Water"))
         {
             rb.transform.position = startingPosition;
         }
