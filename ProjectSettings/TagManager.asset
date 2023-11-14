@@ -11,6 +11,7 @@ TagManager:
   - Flower3
   - Water
   - Wolf
+  - Barrier
   - Terrain
   - Key
   layers:
@@ -20,6 +21,8 @@ TagManager:
   - 
   - Water
   - UI
+  - Barrier
+  - Player
   - 
   - 
   - Pickup
