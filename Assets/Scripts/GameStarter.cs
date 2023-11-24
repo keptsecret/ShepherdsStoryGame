@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameStarter : MonoBehaviour
 {
+    public bool GoToFirstLevel;
+
     public void StartGame()
     {
-        SceneManager.LoadScene("Steven Level");
+        string levelname = GoToFirstLevel ? "Steven Level" : SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(levelname);
         Time.timeScale = 1f;
     }
 }
