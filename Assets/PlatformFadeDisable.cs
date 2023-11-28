@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformFadeDisable : MonoBehaviour
 {
     public float fadeDuration = 2.0f;  // Duration of the fade
-    public float fadeDelay = 1.0f;     // Delay before the fade starts
+    public float fadeDelay = 3.0f;     // Delay before the fade starts
     private float enableDelay = 2.0f;
     private float fadeTimer = 0.0f;
     private float enableTimer = 0.0f;
