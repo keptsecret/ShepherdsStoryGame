@@ -10,6 +10,7 @@ public class SheepController : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
     private AudioSource audioSource;
+    private Vector3 startingPos;
 
     //private bool isAlive = true;
 
@@ -29,6 +30,7 @@ public class SheepController : MonoBehaviour
 
         prevPos = this.transform.position;
         isAlive = true;
+        startingPos = this.transform.position;
 
     }
 
@@ -85,6 +87,11 @@ public class SheepController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player") {
             audioSource.PlayOneShot(BaaSound);
+        }
+
+        if (other.gameObject.tag == "Water")
+        {
+            rb.transform.position = startingPos;
         }
     }
 
