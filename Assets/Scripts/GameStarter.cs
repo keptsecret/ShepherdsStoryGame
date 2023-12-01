@@ -11,6 +11,8 @@ public class GameStarter : MonoBehaviour
     {
         string levelname = GoToFirstLevel ? "Steven Level" : SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(levelname);
+        GameManager.instance.sceneReady = false;
         Time.timeScale = 1f;
+        Cursor.visible = false;
     }
 }
