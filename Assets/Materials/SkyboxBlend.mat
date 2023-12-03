@@ -125,11 +125,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-<<<<<<< HEAD
-    - _value: 0.12895362
-=======
     - _value: 0.0039393106
->>>>>>> ecd2c713ed237999dd18c62ee8ee198a6c448ad5
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
