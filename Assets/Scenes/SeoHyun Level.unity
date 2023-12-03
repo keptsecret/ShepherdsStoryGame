@@ -3232,7 +3232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b364a5485cb4348bfa7a384ad68e970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tickSource: {fileID: 0}
   hasBeenActivated: 0
+  prefab: {fileID: 0}
 --- !u!1 &1425687257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,7 +3623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b364a5485cb4348bfa7a384ad68e970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tickSource: {fileID: 0}
   hasBeenActivated: 0
+  prefab: {fileID: 0}
 --- !u!1001 &1769981253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3791,26 +3795,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b364a5485cb4348bfa7a384ad68e970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tickSource: {fileID: 0}
   hasBeenActivated: 0
+  prefab: {fileID: 0}
 --- !u!1 &1895924814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8885829906990327067, guid: 01046b38b992545c89fdbf029531e6bf,
     type: 3}
   m_PrefabInstance: {fileID: 1268719273}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1895924815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1895924814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b8d3718f6ca4f32ba433a2c74010ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayNext: 20
 --- !u!195 &1895924827
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4735,7 +4728,7 @@ PrefabInstance:
     - target: {fileID: 8433019056720266976, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0549157
+      value: 0.054915696
       objectReference: {fileID: 0}
     - target: {fileID: 8433019056720266976, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
@@ -4745,7 +4738,7 @@ PrefabInstance:
     - target: {fileID: 8433019056720266976, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.09603785
+      value: -0.09603786
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a79f90048d29a4cb8b1dfa85e9b2e6, type: 3}
