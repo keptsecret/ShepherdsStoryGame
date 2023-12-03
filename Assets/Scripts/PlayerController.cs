@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         {
             if (rb.velocity.y > 0)
             {
-
+                anim.SetTrigger("jumpup");
                 anim.SetBool("IsJumpingUp", true);
                 //anim.SetBool("IsMidAir", false);
                 anim.SetBool("IsFalling", false);
@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                anim.ResetTrigger("jumpup");
                 //Debug.Log("falling");
                 anim.SetBool("IsJumpingUp", false);
                 //anim.SetBool("IsMidAir", false);
@@ -99,15 +100,9 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("IsWalking", false);
 
             }
-            //else
-            //{
-            //    Debug.Log("midair");
-            //    anim.SetBool("IsJumpingUp", false);
-            //    anim.SetBool("IsMidAir", true);
-            //    anim.SetBool("IsFalling", false);
-            //}
         } else
         {
+            anim.SetTrigger("walking");
             //Debug.Log("walk");
             anim.SetBool("IsJumpingUp", false);
             //anim.SetBool("IsMidAir", false);
@@ -128,6 +123,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Walk");
             isJumping = false;
             anim.SetBool("IsWalking", true);
+            anim.SetTrigger("walking");
         }
     }
 

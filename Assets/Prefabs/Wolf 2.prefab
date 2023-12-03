@@ -465,7 +465,8 @@ GameObject:
   - component: {fileID: 2418659722898801487}
   - component: {fileID: 2418659722898801486}
   - component: {fileID: 2418659722898801481}
-  - component: {fileID: 2418659722898801480}
+  - component: {fileID: 8201917701159492629}
+  - component: {fileID: 7630939286416461226}
   m_Layer: 0
   m_Name: Wolf 2
   m_TagString: Wolf
@@ -624,7 +625,7 @@ CapsuleCollider:
   m_Height: 0.49
   m_Direction: 2
   m_Center: {x: -0.13, y: 0.23, z: 0.28}
---- !u!114 &2418659722898801480
+--- !u!114 &8201917701159492629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -633,6 +634,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 8885829906990327067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd7708c36734a47e6bc74e67edd58829, type: 3}
+  m_Script: {fileID: 11500000, guid: 32b8d3718f6ca4f32ba433a2c74010ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayNext: 20
+--- !u!195 &7630939286416461226
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8885829906990327067}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
