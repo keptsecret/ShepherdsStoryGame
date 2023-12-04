@@ -67,6 +67,12 @@ public class GameManager : MonoBehaviour
         private set;
     }
 
+    public bool sceneReady
+    {
+        get;
+        set;
+    }
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -80,5 +86,6 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         currentTime = levelTime;
+        sceneReady = true;
     }
 }
